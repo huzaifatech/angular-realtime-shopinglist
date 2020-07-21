@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='mod'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body ng-controller='ctr'>
+<div class="container">
+    <h1 class="title">Products</h1>
+    <ul ng-repeat="p in products">
+        <li ng-click="adtolist(p)" ng-class="{active:p.active}">{{p.name}}<span>{{p.price | currency:"Rs "}}</span> </li>
+    </ul>
+    <div class="total">
+        <h1>Total:<span>{{total() | currency:'Rs '}}</span></h1>
+    </div>
+</div>
+</body>
+</html>
